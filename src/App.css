@@ -64,3 +64,57 @@
     min-width: unset;
   }
 }
+
+.search-input {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.drink-card {
+  /* ... 原本的樣式 */
+  background: #fff;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.drink-card:hover {
+  transform: translateY(-5px);
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; /* 關鍵：不裁切，保持比例 */
+  background-color: #fff; /* 背景墊白，解決透明 Logo 看不清楚的問題 */
+  padding: 4px;
+  border-radius: 4px; /* 改用微圓角，不要用 50% 圓形 */
+}
+
+/* 讓自定義圖標背景變透明 */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-marker {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* 加上陰影增加立體感 */
+}
