@@ -53,5 +53,11 @@ export const mockDrinks = [
     lat: 24.7971874172624, lng: 120.976257539268, toppings: ['仙草'], rating: 4.6, 
     logo: '/logos/morein.png', 
     color: '#010101' 
+  },
+  { 
+    id: 10, name: '奶茶', category: '奶茶', price: 60, store: 'MOREiN沫飲', 
+    lat: 24.7965501594385, lng: 120.9755973, toppings: ['珍珠'], rating: 4.6, 
+    logo: '/logos/shangyulin.jpg', 
+    color: '#765232' 
   }
 ];
