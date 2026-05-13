@@ -1,0 +1,280 @@
+/* 全域與基礎容器設定 */
+.app-container {
+  max-width: 1400px; /* 大螢幕黃金總寬度 */
+  margin: 0 auto;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+/* 頂部精緻狀態列 */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #0f172a;
+  justify-content: center;
+}
+
+.status-badge {
+  background-color: #f0fdf4;
+  color: #166534;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #bbf7d0;
+}
+
+/* 💡 核心修正一：上方外殼排版（align-items: stretch 讓左右兩側等高） */
+.top-split-layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch; /* 👈 關鍵：強迫地圖與篩選選單維持絕對等高 */
+  width: 100%;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+/* 左半邊：篩選中樞玻璃面板 */
+.filter-card-panel {
+  flex: 1; /* 左右各平分 50% 寬度 */
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 讓內部元素平均垂直拉開 */
+  box-sizing: border-box;
+}
+
+/* 搜尋輸入框 */
+.search-bar-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.search-bar-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* 篩選下拉選單 */
+.selectors-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.selectors-row select {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* 價格拉條區 */
+.price-slider-box {
+  margin-bottom: 15px;
+}
+
+.slider-label {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.slider-label span {
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.range-slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+.results-counter {
+  font-size: 0.95rem;
+  color: #475569;
+  font-weight: 600;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 14px;
+}
+
+/* 💡 核心修正二：右半邊地圖區（移除寫死的高度，改由 flex 自動拉伸撐滿） */
+.main-map-section {
+  flex: 1; /* 左右各平分 50% 寬度 */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  color: #0f172a;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+}
+
+/* 💡 核心修正三：下方的卡牌網格（repeat(4, 1fr) 達成一列剛好 4 個） */
+.drink-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 👈 關鍵：強制一列就是 4 格卡牌，且大小完全等寬 */
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 飲料卡牌細節優化 */
+.beverage-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%; /* 交給 Grid 彈性控制 */
+}
+
+.beverage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+}
+
+.b-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.b-store-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+}
+
+.b-store-name {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.b-rating {
+  color: #eab308;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.b-drink-name {
+  font-size: 1.15rem;
+  margin: 0 0 14px 0;
+  color: #1e293b;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.b-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.b-category-tag {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.b-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+/* 載入按鈕 */
+.button-center-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  padding-bottom: 40px;
+}
+
+.load-more-btn {
+  padding: 14px 32px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.load-more-btn:hover {
+  background: #2563eb;
+}
+
+.custom-marker {
+  background: none !important;
+  border: none !important;
+}
+
+/* 📱 響應式：螢幕太小時（小於 1024px）自動改回直立排列，防止畫面太擠擠扁 */
+@media (max-width: 1024px) {
+  .top-split-layout {
+    flex-direction: column;
+  }
+  .main-map-section {
+    height: 350px;
+  }
+  .drink-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 中螢幕一排 2 個 */
+  }
+}
+
+@media (max-width: 600px) {
+  .drink-card-grid {
+    grid-template-columns: 1fr; /* 手機一排 1 個 */
+  }
+}
