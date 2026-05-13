@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import MapComponent from './components/MapComponent';
+import MapComponent from './Components/MapComponent';
 import mockDrinks from './data/drinks'; // 💡 確保妳把假資料獨立成一個檔案導入
 
 function App() {
