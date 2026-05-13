@@ -8,11 +8,25 @@
 
 假設您的電腦已安裝好 **VS Code** 與 **MySQL Workbench**。
 安裝必要依賴套件(在終端機輸入)：
-   ```bash
-   npm install
-💡 檢查 .env 檔案，確保裡面的 DB_PASSWORD 與您的 MySQL root 密碼一致。
+
+```bash
+npm install
+```
+
+💡 在backend資料夾中建立 `.env `檔案，確保裡面的 `DB_PASSWORD` 與您的 `MySQL root` 密碼一致。
+
+```env
+# 後端伺服器埠號
+PORT=3000
+# 本地 MySQL 資料庫連線設定
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=妳的MySQL密碼  # 👈 請替換成妳當初安裝 MySQL 設定的 root 密碼
+DB_NAME=drink_db         # 👈 請替換成妳匯入 DBA.sql 的資料庫名稱
+```
 
 ### 🗄️ 第一步：還原 MySQL 資料庫
+
 1. 打開 **MySQL Workbench**，點擊進入 `Local instance MySQL80`。
 2. 點擊左側選單的 **Data Import/Restore**。
 3. 選擇 **Import from Self-Contained File**，並選取專案目錄底下的 `DBA.sql`。
@@ -22,22 +36,37 @@
 ### 🚀 第二步：啟動 Application Layer (後端)
 1. 用 VS Code 打開本專案，並開啟終端機。
 2. 切換至後端目錄：
-   ```bash
-   cd backend
+
+```bash
+cd backend
+```
+
 3. 啟動後端 API 伺服器：
-   ```bash
-   node server.js
+
+```bash
+node server.js
+```
+
 當畫面顯示 🚀 雙軌配料真 API 已成功啟動：http://localhost:3000 即代表與 MySQL 連線成功。
 
 ### 💻 第三步：啟動 Presentation Layer (前端)
 1. 在 VS Code 中點擊 + 號開一個「新的終端機視窗」（保留後端執行）。
 2. 切換至前端目錄：
-   ```bash
-   cd frontend
+
+```bash
+cd frontend
+```
+
 3. 安裝前端網頁套件：
-   ```bash
-   npm install
+
+```bash
+npm install
+```
+
 4. 啟動 React 本機伺服器：
-   ```bash
-   npm run dev
+
+```bash
+npm run dev
+```
+
 5. 按住 Ctrl 點擊終端機顯示的 http://localhost:5173 網址，即可看見完整系統！
