@@ -14,7 +14,7 @@ const mockDrinks = [
   {
     id: 3, name: '燕麥鮮奶茶', category: '拿鐵', price: 70, store: '迷客夏',
     lat: 24.7968, lng: 120.9759, rating: 4.6, color: '#83A731',
-    logo: '/logos/milkshop.png',
+    logo: '/logos/milksha.png',
     toppings: ['大甲燕麥'], standardToppings: ['燕麥']
   },
   {
@@ -68,7 +68,7 @@ const mockDrinks = [
   {
     id: 12, name: '黑糖粉粿鮮奶', category: '特調', price: 70, store: '迷客夏',
     lat: 24.7968, lng: 120.9759, rating: 4.5, color: '#83A731',
-    logo: '/logos/milkshop.png',
+    logo: '/logos/milksha.png',
     toppings: ['黑糖粉粿'], standardToppings: ['粉粿']
   },
   {
